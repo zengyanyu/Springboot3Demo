@@ -19,11 +19,12 @@ public class RedisController {
      *
      * @return
      */
-    @Operation(summary = "redis方法_增加", description = "redis方法_增加")
     @GetMapping("/incr")
+    @Operation(summary = "redis方法_增加", description = "redis方法_增加描述")
     public String incr() {
         // 给hha的可以数量+1
         Long haha = redisTemplate.opsForValue().increment("haha");
         return "返回最新的数量： haha = " + haha;
     }
+
 }

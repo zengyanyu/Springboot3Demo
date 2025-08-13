@@ -14,8 +14,8 @@ public class HelloController {
 
     private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
 
-    @Operation(summary = "hello方法", description = "hello方法")
     @GetMapping("/hello")
+    @Operation(summary = "hello方法", description = "hello方法描述")
     public String hello() {
         for (int i = 0; i < 1000; i++) {
             logger.info("Hello Spring boot 3===========" + i);
@@ -24,8 +24,12 @@ public class HelloController {
     }
 
     @GetMapping("/getUserInfo")
-    @Operation(summary = "用户信息", description = "用户信息描述")
+    @Operation(summary = "获取用户信息", description = "获取用户信息描述")
     public UserInfoDto getUserInfo() {
-        return new UserInfoDto();
+        UserInfoDto userInfoDto = new UserInfoDto();
+        userInfoDto.setUsername("admin");
+        userInfoDto.setPassword("123456");
+        return userInfoDto;
     }
+
 }
