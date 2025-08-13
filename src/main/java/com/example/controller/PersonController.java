@@ -1,6 +1,10 @@
 package com.example.controller;
 
 import com.example.bean.Person;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,4 +41,22 @@ public class PersonController {
          *  </Person>
          */
     }
+
+    @GetMapping("/getPersonByYamlData")
+    @Operation(summary = "获取人员信息(返回YAML格式数据)", description = "返回YAML格式数据")
+    public String getPersonByYamlData() throws JsonProcessingException {
+        Person person = new Person();
+        person.setId(1L);
+        person.setUsername("飞雪");
+        person.setEmail("1194314874@qq.com");
+        person.setAge(18);
+
+        // 创建工厂的时候，禁用一种文档开始标记特性（ 生成的yaml的开始就不会有---开始了；）
+//        YAMLFactory factory = new YAMLFactory();
+        YAMLFactory factory = new YAMLFactory().disable(YAMLGenerator.Feature.WRITE_DOC_START_MARKER);
+        ObjectMapper objectMapper = new ObjectMapper(factory);
+        String s = objectMapper.writeValueAsString(person);
+        return s;
+    }
+
 }
