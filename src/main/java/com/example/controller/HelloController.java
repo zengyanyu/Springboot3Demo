@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Tag(name = "Hello控制器", description = "Hello控制器")
+@Tag(name = "Hello控制器", description = "Hello控制器描述")
 public class HelloController {
 
     private static final Logger logger = LoggerFactory.getLogger(HelloController.class);

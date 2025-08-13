@@ -7,8 +7,8 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@Tag(name = "Redis控制器", description = "Redis控制器")
 @RestController
+@Tag(name = "Redis控制器", description = "Redis控制器描述")
 public class RedisController {
 
     @Autowired
