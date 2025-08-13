@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.dto.UserInfoDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;
@@ -20,5 +21,11 @@ public class HelloController {
             logger.info("Hello Spring boot 3===========" + i);
         }
         return "hello Spring boot 3";
+    }
+
+    @GetMapping("/getUserInfo")
+    @Operation(summary = "用户信息", description = "用户信息描述")
+    public UserInfoDto getUserInfo() {
+        return new UserInfoDto();
     }
 }
