@@ -3,6 +3,10 @@ server:
   port: 8081
 
 spring:
+  mvc:
+    contentnegotiation:
+      favor-parameter: true # 使用参数进行内容协商（默认是没有开启的） ,默认参数名：format
+      parameter-name: type # 修改内容协商的参数名称
   application:
     name: spring-boot-3-demo
   thymeleaf:

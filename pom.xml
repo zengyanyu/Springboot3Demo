@@ -25,7 +25,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- 切换日志组合，使用就近原则，导入starter，排除starter-logging,在单独添加starter-log4j2 -->
+        <!-- 支持返回xml格式的数据 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+        </dependency>
+        <!-- 切换日志组合，使用就近原则，导入starter，排除starter-logging,再单独添加starter-log4j2 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -61,7 +66,7 @@
             <artifactId>lombok</artifactId>
             <version>1.18.38</version>
         </dependency>
-
+        <!-- knife4j-openapi3 -->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
