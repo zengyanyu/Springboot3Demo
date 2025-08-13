@@ -35,3 +35,5 @@ sheep:
 logging:
   pattern:
     console: "%d{yyy-MM-dd HH:mm:ss.sss}%-5level [%thread]%logger{15}===>%msg%n"
+  level:
+    root: info
