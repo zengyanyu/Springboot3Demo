@@ -1,10 +1,13 @@
 package com.example.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "Redis控制器", description = "Redis控制器")
 @RestController
 public class RedisController {
 
@@ -16,6 +19,7 @@ public class RedisController {
      *
      * @return
      */
+    @Operation(summary = "redis方法_增加", description = "redis方法_增加")
     @GetMapping("/incr")
     public String incr() {
         // 给hha的可以数量+1
