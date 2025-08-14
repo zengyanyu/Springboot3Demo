@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
 public class SpringDocConfig {
 
     @Bean
-    public OpenAPI springShopOpenApi() {
+    public OpenAPI springOpenApi() {
         return new OpenAPI().info(new Info().title("蒾酒的demo")
                 .description("这是基于Knife4j OpenApi3的测试接口文档")
                 .version("1.0版本").contact(new Contact().name("蒾酒").email("000000000@qq.com")));
     }
-    
+
 }
