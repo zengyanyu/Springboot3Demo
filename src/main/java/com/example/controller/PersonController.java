@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonController {
 
     @GetMapping("/getPerson")
-    @Operation(summary = "获取人员信息", description = "返回xml格式的数据")
+    @Operation(summary = "获取人员信息", description = "返回xml/json/yaml格式的数据")
     public Person getPerson() {
         Person person = new Person();
         person.setId(1L);
